@@ -4,7 +4,7 @@ Grafana - platform for analytics and monitoring
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-grafana/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-grafana/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-grafana/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-grafana)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/grafana)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/grafana)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/pulls/)|
+|[![github](https://github.com/buluma/ansible-role-grafana/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-grafana/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-grafana/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-grafana)|[![quality](https://img.shields.io/ansible/quality/58593)](https://galaxy.ansible.com/buluma/grafana)|[![downloads](https://img.shields.io/ansible/role/d/58593)](https://galaxy.ansible.com/buluma/grafana)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -18,6 +18,10 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 
   roles:
     - role: buluma.grafana
+      vars:
+        grafana_security:
+          admin_user: admin
+          admin_password: password
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
@@ -79,7 +83,7 @@ grafana_server:
 # Security
 grafana_security:
   admin_user: admin
-  admin_password: ""
+  admin_password: "password"
 #  secret_key: ""
 #  login_remember_days: 7
 #  cookie_username: grafana_user
