@@ -6,3 +6,7 @@
 
   roles:
     - role: ansible-role-grafana
+      vars:
+        grafana_security:
+          admin_user: admin
+          admin_password: password
