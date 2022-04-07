@@ -1,6 +1,6 @@
 # [grafana](#grafana)
 
-Grafana - platform for analytics and monitoring
+Install and configure grafana on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
