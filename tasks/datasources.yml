@@ -25,7 +25,7 @@
 
 - name: Create/Update datasources file (provisioning)
   become: true
-  copy:
+  ansible.builtin.copy:
     dest: "/etc/grafana/provisioning/datasources/ansible.yml"
     content: |
       apiVersion: 1

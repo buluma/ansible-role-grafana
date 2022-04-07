@@ -1,7 +1,7 @@
 ---
 - name: Create/Delete/Update alert notifications channels (provisioning)
   become: true
-  copy:
+  ansible.builtin.copy:
     content: |
       apiVersion: 1
       {{ grafana_alert_notifications | to_nice_yaml }}

@@ -48,7 +48,7 @@
     - grafana_run
 
 - name: Wait for grafana to start (http/s)
-  wait_for:
+  ansible.builtin.wait_for:
     host: "{{ grafana_address }}"
     port: "{{ grafana_port }}"
   when: grafana_server.protocol is undefined or grafana_server.protocol in ['http', 'https']
@@ -61,7 +61,7 @@
     - grafana_run
 
 - name: Wait for grafana to start (socket)
-  wait_for:
+  ansible.builtin.wait_for:
     path: "{{ grafana_server.socket }}"
   when: grafana_server.protocol is defined and grafana_server.protocol == 'socket'
   tags:
@@ -94,7 +94,7 @@
 
 - name: "Check if there are any dashboards in local {{ grafana_dashboards_dir }}"
   become: false
-  set_fact:
+  ansible.builtin.set_fact:
     found_dashboards: "{{ lookup('fileglob', grafana_dashboards_dir + '/*.json', wantlist=True) }}"
   tags:
     - grafana_configure

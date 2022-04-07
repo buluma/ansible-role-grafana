@@ -1,6 +1,6 @@
 ---
 - name: Check which plugins are installed
-  find:
+  ansible.builtin.find:
     file_type: directory
     recurse: false
     paths: "{{ grafana_data_dir }}/plugins"
