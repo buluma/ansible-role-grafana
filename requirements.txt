@@ -14,3 +14,4 @@ testinfra>=1.7.0
 jmespath
 selinux
 passlib
+jmespath
