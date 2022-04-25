@@ -5,6 +5,7 @@
     state: directory
     owner: root
     group: grafana
+    mode: 0644
   with_items:
     - "/etc/grafana"
     - "/etc/grafana/datasources"

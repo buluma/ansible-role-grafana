@@ -140,6 +140,7 @@
       ansible.builtin.copy:
         src: "{{ item }}"
         dest: "{{ grafana_data_dir }}/dashboards/{{ item | basename }}"
+        mode: 0644
       with_fileglob:
         - "{{ _tmp_dashboards.path }}/*"
         - "{{ grafana_dashboards_dir }}/*.json"

@@ -4,6 +4,7 @@
   ansible.builtin.file:
     path: "{{ grafana_api_keys_dir }}/{{ inventory_hostname }}"
     state: directory
+    mode: 0644
   delegate_to: localhost
 
 - name: check api key list
@@ -36,6 +37,7 @@
     dest: "{{ grafana_api_keys_dir }}/{{ inventory_hostname }}/{{ item['item']['name'] }}.key"
     content: "{{ item['json']['key'] }}"
     backup: false
+    mode: 0644
   when: item['json'] is defined
   with_items: "{{ new_api_keys['results'] }}"
   delegate_to: localhost
