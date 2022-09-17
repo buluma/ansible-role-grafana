@@ -74,4 +74,4 @@
   until: _install_packages is succeeded
   retries: 5
   delay: 2
-  notify: restart grafana
+  notify: Restart grafana

@@ -17,4 +17,4 @@
   retries: 5
   delay: 2
   notify:
-    - restart grafana
+    - Restart grafana
