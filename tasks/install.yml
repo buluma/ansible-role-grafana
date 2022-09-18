@@ -42,7 +42,7 @@
     - ansible_pkg_mgr in ['yum', 'dnf']
     - grafana_manage_repo
 
-- name: signing
+- name: Signing key import
   block:
     - name: Import grafana GPG signing key [Debian/Ubuntu]
       ansible.builtin.apt_key:
