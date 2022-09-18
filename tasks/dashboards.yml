@@ -2,7 +2,7 @@
 - become: false
   delegate_to: localhost
   run_once: true
-  - name:
+  - name: Dashboard setup
     block:
       - name: Create local grafana dashboard directory
         ansible.builtin.tempfile:
