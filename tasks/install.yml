@@ -1,6 +1,7 @@
 ---
 
-- block:
+- name: Update cache and install deps
+  block:
     - name: Update apt cache
       ansible.builtin.apt:
         update_cache: true
@@ -41,7 +42,8 @@
     - ansible_pkg_mgr in ['yum', 'dnf']
     - grafana_manage_repo
 
-- block:
+- name: signing
+  block:
     - name: Import grafana GPG signing key [Debian/Ubuntu]
       ansible.builtin.apt_key:
         url: "https://packages.grafana.com/gpg.key"

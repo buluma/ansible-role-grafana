@@ -51,7 +51,8 @@
     - "{{ grafana_data_dir }}/dashboards"
     - "{{ grafana_data_dir }}/plugins"
 
-- block:
+- name: Grafana socket setup
+  block:
     - name: Create grafana socket directory
       ansible.builtin.file:
         path: "{{ grafana_server.socket | dirname }}"

@@ -12,7 +12,7 @@
 
     # Use curl to solve issue #77
     - name: Download grafana dashboard from grafana.net to local directory
-      command: >
+      ansible.builtin.command: >
         curl --fail --compressed
         https://grafana.com/api/dashboards/{{ item.dashboard_id }}/revisions/{{ item.revision_id }}/download
         -o {{ _tmp_dashboards.path }}/{{ item.dashboard_id }}.json
@@ -105,7 +105,7 @@
 #   with_fileglob:
 #     - "/tmp/dashboards/*"
 
-- when: grafana_use_provisioning
+- when: Grafana_use_provisioning
   block:
     - name: Create/Update dashboards file (provisioning)
       become: true
