@@ -1,14 +1,15 @@
-# [grafana](#grafana)
+# [Ansible role grafana](#grafana)
 
 Grafana - platform for analytics and monitoring
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-grafana/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-grafana/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-grafana/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-grafana)|[![quality](https://img.shields.io/ansible/quality/58593)](https://galaxy.ansible.com/buluma/grafana)|[![downloads](https://img.shields.io/ansible/role/d/58593)](https://galaxy.ansible.com/buluma/grafana)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-grafana/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-grafana/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-grafana/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-grafana)|[![downloads](https://img.shields.io/ansible/role/d/4723)](https://galaxy.ansible.com/buluma/grafana)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-grafana.svg)](https://github.com/buluma/ansible-role-grafana/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-grafana/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+
 ```yaml
 ---
 - name: converge
@@ -24,7 +25,8 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
           admin_password: password
 ```
 
-The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-grafana/blob/master/molecule/default/prepare.yml):
+
 ```yaml
 ---
 - name: Prepare
@@ -33,10 +35,12 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
   tasks: []
 ```
 
+Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
 
 ## [Role Variables](#role-variables)
 
-The default values for the variables are set in `defaults/main.yml`:
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-grafana/blob/master/defaults/main.yml):
+
 ```yaml
 ---
 grafana_version: latest
@@ -296,7 +300,7 @@ grafana_panels: {}
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-grafana/blob/main/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-grafana/blob/master/requirements.txt).
 
 
 ## [Context](#context)
@@ -313,18 +317,16 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|ubuntu|all|
-|debian|all|
-|el|all|
-|fedora|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
+|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
+|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
 
 The minimum version of Ansible required is 2.9, tests have been done to:
 
 - The previous version.
 - The current version.
 - The development version.
-
-
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-grafana/issues)
 
@@ -334,8 +336,14 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-Apache-2.0
+[Apache-2.0](https://github.com/buluma/ansible-role-grafana/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[buluma](https://buluma.github.io/)
+
+Please consider [sponsoring me](https://github.com/sponsors/buluma).
+
+### [Special Thanks](#special-thanks)
+
+Template inspired by [Robert de Bock](https://github.com/robertdebock)
