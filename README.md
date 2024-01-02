@@ -12,7 +12,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: converge
+- name: Converge
   hosts: all
   become: yes
   gather_facts: yes
@@ -322,7 +322,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
 |[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
 
-The minimum version of Ansible required is 2.9, tests have been done to:
+The minimum version of Ansible required is 2.12, tests have been done to:
 
 - The previous version.
 - The current version.

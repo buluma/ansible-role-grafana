@@ -5,4 +5,4 @@
 repository:
   description: Grafana - platform for analytics and monitoring
   homepage: https://buluma.github.io/
-  topics: grafana, dashboard, alerts, alerting, presentation, monitoring, metrics, ansible, molecule, tox, playbook
+  topics: grafana, dashboard, alerts, alerting, presentation, monitoring, metrics, system, ansible, molecule, tox, playbook

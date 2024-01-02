@@ -1,8 +1,8 @@
 ---
 
-- name: Update cache and install deps
+- name: install | Update cache and install deps
   block:
-    - name: Update apt cache
+    - name: install | Update apt cache
       ansible.builtin.apt:
         update_cache: true
       register: _pre_update_apt_cache
@@ -10,7 +10,7 @@
       when:
         - ansible_pkg_mgr == "apt"
 
-    - name: Install dependencies
+    - name: install | Install dependencies
       ansible.builtin.package:
         name: "{{ grafana_dependencies }}"
         state: present
@@ -19,19 +19,19 @@
       retries: 5
       delay: 2
 
-- name: Remove conflicting grafana packages
+- name: install | Remove conflicting grafana packages
   ansible.builtin.package:
     name: grafana-data
     state: absent
   register: _old_grafana_pkgs
 
-- name: Clean apt cache
+- name: install | Clean apt cache
   ansible.builtin.command: apt clean
   when:
     - _old_grafana_pkgs is changed
     - ansible_pkg_mgr == "apt"
 
-- name: Add grafana repository file [RHEL/CentOS]
+- name: install | Add grafana repository file [RHEL/CentOS]
   ansible.builtin.template:
     src: "{{ grafana_yum_repo_template }}"
     dest: "/etc/yum.repos.d/{{ grafana_yum_repo_template | basename | regex_replace('\\.j2$', '') }}"
@@ -42,9 +42,9 @@
     - ansible_pkg_mgr in ['yum', 'dnf']
     - grafana_manage_repo
 
-- name: Signing key import
+- name: install | Signing key import
   block:
-    - name: Import grafana GPG signing key [Debian/Ubuntu]
+    - name: install | Import grafana GPG signing key [Debian/Ubuntu]
       ansible.builtin.apt_key:
         url: "https://packages.grafana.com/gpg.key"
         state: present
@@ -54,7 +54,7 @@
       retries: 5
       delay: 2
 
-    - name: Add grafana repository [Debian/Ubuntu]
+    - name: install | Add grafana repository [Debian/Ubuntu]
       ansible.builtin.apt_repository:
         repo: deb https://packages.grafana.com/oss/deb stable main
         state: present
@@ -68,7 +68,7 @@
     - grafana_manage_repo
   environment: "{{ grafana_environment }}"
 
-- name: Install grafana
+- name: install | Install grafana
   ansible.builtin.package:
     name: "{{ grafana_package }}"
     state: "{{ (grafana_version == 'latest') | ternary('latest', 'present') }}"
