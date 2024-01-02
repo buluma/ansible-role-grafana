@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-grafana/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-grafana/compare/v0.1.0...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#11](https://github.com/buluma/ansible-role-grafana/issues/11)
+
 ## [v0.1.0](https://github.com/buluma/ansible-role-grafana/tree/v0.1.0) (2022-03-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-grafana/compare/e4fd2686500ac9573ec81b3f9323dcd12aa485a0...v0.1.0)
